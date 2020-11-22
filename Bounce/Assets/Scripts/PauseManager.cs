@@ -7,7 +7,7 @@ public class PauseManager : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     
-    GameObject pauseMenu;
+    public GameObject pauseMenu;
 
     public GameObject Win;
     public GameObject Move2D;
@@ -34,6 +34,7 @@ public class PauseManager : MonoBehaviour
     }
     public void Resume()
     {
+        pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -60,13 +61,5 @@ public class PauseManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("QUIT");
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Player")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
     }
 }

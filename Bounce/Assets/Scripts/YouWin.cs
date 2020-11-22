@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class YouWin : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class YouWin : MonoBehaviour
         {
             Win.SetActive(true);
             Time.timeScale = 0f;
+        }
+    }
+    
+    void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.name == "Player") {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

@@ -23,10 +23,8 @@ public class Move2D : MonoBehaviour
         Jump();
         if(onIce == false) {
             movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-            Debug.Log(movement.x);
             if(movement.x > 0.4f || movement.x < -0.4f) {
                 lastMovement = movement;
-                Debug.Log("saved");
             }
         }
         Vector3 finalMovement = movement + conveyorSpeed;
