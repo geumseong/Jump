@@ -218,6 +218,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5541235925372194491, guid: 67025609810a6ba448c3231a66e34383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541235926113960332, guid: 67025609810a6ba448c3231a66e34383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5541235926113960334, guid: 67025609810a6ba448c3231a66e34383,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -338,6 +348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GAME OVER
       objectReference: {fileID: 0}
+    - target: {fileID: 5541235926879985210, guid: 67025609810a6ba448c3231a66e34383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5541235926879985604, guid: 67025609810a6ba448c3231a66e34383,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -380,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &156810403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2449,11 +2464,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 120192ceb67067e4b85aebf80bf0114a, type: 3}
-    m_FontSize: 30
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2798,6 +2813,11 @@ PrefabInstance:
       propertyPath: Win
       value: 
       objectReference: {fileID: 275968222}
+    - target: {fileID: 3534094681058254080, guid: 55ae053fb565d8e4dbc45f453b88c868,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1169785657}
     - target: {fileID: 3534094681058254081, guid: 55ae053fb565d8e4dbc45f453b88c868,
         type: 3}
       propertyPath: m_Name
@@ -3297,7 +3317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2003665706
 RectTransform:
   m_ObjectHideFlags: 0

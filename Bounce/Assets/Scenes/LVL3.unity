@@ -862,6 +862,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 511921279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &522261684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5211565702814740274, guid: 2a21598423533384291efac764ea9679,
+    type: 3}
+  m_PrefabInstance: {fileID: 1806262605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &569183644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2546,6 +2552,11 @@ PrefabInstance:
       propertyPath: Move2D
       value: 
       objectReference: {fileID: 685619557}
+    - target: {fileID: 3534094681058254080, guid: 55ae053fb565d8e4dbc45f453b88c868,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 522261684}
     - target: {fileID: 3534094681058254081, guid: 55ae053fb565d8e4dbc45f453b88c868,
         type: 3}
       propertyPath: m_Name

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Move2D : MonoBehaviour
 {
@@ -54,11 +55,11 @@ public class Move2D : MonoBehaviour
         }
 
         else if(collider.tag == "ConveyorBeltLeft") {
-            conveyorSpeed = new Vector3(-0.5f, 0, 0);
+            conveyorSpeed = new Vector3(0.9f, 0, 0);
         }
 
         else if(collider.tag == "ConveyorBeltRight") {
-            conveyorSpeed = new Vector3(0.5f, 0, 0);
+            conveyorSpeed = new Vector3(0.9f, 0, 0);
         }
     }
     public void OnTriggerExit2D(Collider2D collider) {
@@ -75,7 +76,14 @@ public class Move2D : MonoBehaviour
     {
         if (other.tag == "Death")
         {
-            GameOver.SetActive(true);
+            StartCoroutine(Ded());
         }
+    }
+
+    IEnumerator Ded()
+    {
+        GameOver.SetActive(true);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("LVL1");
     }
 }

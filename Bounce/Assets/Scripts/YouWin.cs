@@ -16,11 +16,17 @@ public class YouWin : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Win.SetActive(true);
-            Time.timeScale = 0f;
+            StartCoroutine(POG());
+            GameObject.Find("Death Block").GetComponent<Lava>().isMoving = false;
         }
     }
-    
+    IEnumerator POG()
+    {
+        Win.SetActive(true);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("MainMenu");
+    }
+
     void OnTriggerEnter2D(Collider2D collider) {
         if(collider.name == "Player") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
