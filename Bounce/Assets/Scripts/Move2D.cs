@@ -11,17 +11,21 @@ public class Move2D : MonoBehaviour
 
     public bool isGrounded = false;
     public bool onIce = false;
+    Vector3 movement;
+    float conveyorSpeed = 0f;
     
     void Update()
     {
         Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * moveSpeed;
+        if(onIce == false) {
+            movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        }
+        transform.position += movement * Time.deltaTime * (moveSpeed - conveyorSpeed);
     }
     
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if (Input.GetButtonDown("Jump") && isGrounded == true && onIce == false)
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
         }
@@ -39,8 +43,22 @@ public class Move2D : MonoBehaviour
         if(collider.tag == "IcePlatform") {
             onIce = true;
         }
+
+        else if(collider.tag == "ConveyorBeltLeft") {
+            conveyorSpeed = 4f;
+        }
+
+        else if(collider.tag == "ConveyorBeltRight") {
+            conveyorSpeed = -4f;
+        }
     }
     public void OnTriggerExit2D(Collider2D collider) {
-        
+        if(collider.tag == "IcePlatform") {
+            onIce = false;
+        }
+
+        else {
+            conveyorSpeed = 0f;
+        }
     }
 }
