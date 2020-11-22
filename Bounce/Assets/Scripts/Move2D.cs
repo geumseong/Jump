@@ -9,8 +9,11 @@ public class Move2D : MonoBehaviour
     public float launchForce;
     public float moveSpeed = 5f;
 
+    public GameObject GameOver;
+
     public bool isGrounded = false;
     public bool onIce = false;
+
     Vector3 movement;
     Vector3 conveyorSpeed;
     Vector3 lastMovement;
@@ -67,6 +70,14 @@ public class Move2D : MonoBehaviour
 
         else {
             conveyorSpeed = new Vector3(0, 0, 0);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Death")
+        {
+            GameOver.SetActive(true);
         }
     }
 }
