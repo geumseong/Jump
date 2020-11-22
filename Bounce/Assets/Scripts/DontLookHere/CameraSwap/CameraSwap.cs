@@ -14,5 +14,8 @@ public class CameraSwap : MonoBehaviour
             cam1.SetActive(false);
             cam2.SetActive(true);
         }
+        if(gameObject.name == "CameraSwap (3)") {
+            GameObject.Find("Death Block").GetComponent<Lava>().isMoving = true;
+        }
     }
 }

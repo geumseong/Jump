@@ -7,6 +7,9 @@ TagManager:
   - Platforms
   - JumpPad
   - Death
+  - IcePlatform
+  - ConveyorBeltLeft
+  - ConveyorBeltRight
   layers:
   - Default
   - TransparentFX

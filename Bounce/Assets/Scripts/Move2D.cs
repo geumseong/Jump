@@ -12,15 +12,22 @@ public class Move2D : MonoBehaviour
     public bool isGrounded = false;
     public bool onIce = false;
     Vector3 movement;
-    float conveyorSpeed = 0f;
+    Vector3 conveyorSpeed;
+    Vector3 lastMovement;
     
     void Update()
     {
         Jump();
         if(onIce == false) {
             movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+            Debug.Log(movement.x);
+            if(movement.x > 0.4f || movement.x < -0.4f) {
+                lastMovement = movement;
+                Debug.Log("saved");
+            }
         }
-        transform.position += movement * Time.deltaTime * (moveSpeed - conveyorSpeed);
+        Vector3 finalMovement = movement + conveyorSpeed;
+        transform.position += finalMovement * Time.deltaTime * moveSpeed;
     }
     
     void Jump()
@@ -39,17 +46,18 @@ public class Move2D : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collider) {
+    public void OnTriggerStay2D(Collider2D collider) {
         if(collider.tag == "IcePlatform") {
             onIce = true;
+            movement = lastMovement;
         }
 
         else if(collider.tag == "ConveyorBeltLeft") {
-            conveyorSpeed = 4f;
+            conveyorSpeed = new Vector3(-0.5f, 0, 0);
         }
 
         else if(collider.tag == "ConveyorBeltRight") {
-            conveyorSpeed = -4f;
+            conveyorSpeed = new Vector3(0.5f, 0, 0);
         }
     }
     public void OnTriggerExit2D(Collider2D collider) {
@@ -58,7 +66,7 @@ public class Move2D : MonoBehaviour
         }
 
         else {
-            conveyorSpeed = 0f;
+            conveyorSpeed = new Vector3(0, 0, 0);
         }
     }
 }
