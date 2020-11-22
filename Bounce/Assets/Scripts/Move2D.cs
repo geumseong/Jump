@@ -10,6 +10,7 @@ public class Move2D : MonoBehaviour
     public float moveSpeed = 5f;
 
     public bool isGrounded = false;
+    public bool onIce = false;
     
     void Update()
     {
@@ -32,5 +33,14 @@ public class Move2D : MonoBehaviour
         {
             rb.velocity = Vector2.up * launchForce;
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.tag == "IcePlatform") {
+            onIce = true;
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collider) {
+        
     }
 }
