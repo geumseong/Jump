@@ -1,0 +1,30 @@
+Change log:
+
+2020-11-18
+
+Bitbucket creration
+
+2020-11-19
+
+2D assets made
+Move2D.cs made
+Grounded.cs made
+CameraSwap.cs and CameraSwap2.cs made
+Level 1 made
+Player.png Modidfied
+LVL1 + LVL2 Created
+PauseManager.cs created
+
+2020-11-21
+
+Additional scenes created
+main menu created
+
+2020-11-22
+
+2D assets updated
+lava.cs created
+Move2D.cs updated
+LVL 2 to 4 fully created
+PauseMenu and GameOver and Win added with corresponding cs
+PauseManager.cs modified
